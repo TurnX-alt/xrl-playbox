@@ -1,0 +1,127 @@
+{
+  "app": {
+    "title": "GameBox",
+    "subtitle": "Mini Game Collection"
+  },
+  "nav": {
+    "games": "Games",
+    "achievements": "Achievements",
+    "settings": "Settings",
+    "back": "Back"
+  },
+  "games": {
+    "title": "Game Library",
+    "greeting": "Choose a game to play",
+    "play": "Play",
+    "sortByName": "Sort by name",
+    "sortByLaunch": "Sort by launch order"
+  },
+  "sokoban": {
+    "title": "Sokoban",
+    "description": "Classic box-pushing with endless random levels.",
+    "level": "Level {level}",
+    "steps": "Steps: {used}/{limit}",
+    "resets": "Resets: {count}",
+    "boxesOnTarget": "On target: {current}/{total}",
+    "controls": "Controls",
+    "controlHint": "Use arrow keys or WASD to move. Push boxes onto the green targets.",
+    "legend": "Legend",
+    "wall": "Wall",
+    "target": "Target",
+    "box": "Box",
+    "player": "Player",
+    "size": "Size",
+    "reset": "Reset Level",
+    "victory": "Level Complete!",
+    "defeat": "Out of Steps",
+    "nextLevel": "Next Level",
+    "forfeitConfirm": "Are you sure you want to quit and forfeit the current game?"
+  },
+  "deal": {
+    "title": "Deal Master",
+    "description": "Deal or No Deal: 25 briefcases, one life-changing choice.",
+    "mode": {
+      "single": "Single Player",
+      "double": "Two Players"
+    },
+    "selectOwn": "Choose your briefcase",
+    "yourCase": "Your Case",
+    "eliminate": "Eliminate {count} cases (Round {round})",
+    "bankerOffer": "Banker's Offer",
+    "deal": "DEAL",
+    "noDeal": "NO DEAL",
+    "finalReveal": "Final Reveal",
+    "result": "Result",
+    "win": "You won {amount}",
+    "player1": "Player 1",
+    "player2": "Player 2",
+    "turn": "{player}'s turn",
+    "history": "Offer History",
+    "round": "Round {round}",
+    "amountBoard": "Amount Board",
+    "forfeitConfirm": "Are you sure you want to forfeit the current game?"
+  },
+  "achievements": {
+    "title": "Achievements",
+    "totalPoints": "Total Points: {points}",
+    "locked": "Locked",
+    "unlocked": "Unlocked",
+    "newUnlock": "Achievement Unlocked!",
+    "filterAll": "All",
+    "filterSokoban": "Sokoban",
+    "filterDeal": "Deal Master"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "sound": "Sound",
+    "resetData": "Reset All Data",
+    "resetConfirm": "Clear all achievements, settings and progress? This cannot be undone.",
+    "redeemCode": "Redeem Code",
+    "redeemSubmit": "Submit",
+    "redeemSuccess": "Redeemed",
+    "redeemInvalid": "Invalid command"
+  },
+  "common": {
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "close": "Close",
+    "continue": "Continue",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "ach": {
+    "hangOnTree": {
+      "name": "Hang on One Tree",
+      "desc": "Reset the same level 3 times in a row"
+    },
+    "passFive": {
+      "name": "Pass Five Levels",
+      "desc": "Clear level 5 for the first time"
+    },
+    "cutSix": {
+      "name": "Cut Six Generals",
+      "desc": "Place 6 boxes on targets in one level without resetting"
+    },
+    "millionaire": {
+      "name": "Millionaire",
+      "desc": "End with one million dollars"
+    },
+    "millionPoor": {
+      "name": "Million Poor",
+      "desc": "End with $0.01"
+    },
+    "impatient": {
+      "name": "Impatient",
+      "desc": "Sell after the first elimination round"
+    },
+    "reverseVilla": {
+      "name": "Reverse Villa",
+      "desc": "Eliminate 3 consecutive cases over $100,000"
+    },
+    "prophet": {
+      "name": "Prophet",
+      "desc": "Accepted offer within 1% of your case amount"
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "app": {
+    "title": "GameBox",
+    "subtitle": "小游戏合集"
+  },
+  "nav": {
+    "games": "游戏",
+    "achievements": "成就",
+    "settings": "设置",
+    "back": "返回"
+  },
+  "games": {
+    "title": "游戏库",
+    "greeting": "选择一款游戏开始",
+    "play": "开始游戏",
+    "sortByName": "按名称排序",
+    "sortByLaunch": "按启动顺序排序"
+  },
+  "sokoban": {
+    "title": "推箱子",
+    "description": "经典推箱子，无限随机关卡，越往后越难。",
+    "level": "第 {level} 关",
+    "steps": "步数：{used}/{limit}",
+    "resets": "重置：{count}",
+    "boxesOnTarget": "归位：{current}/{total}",
+    "controls": "操作",
+    "controlHint": "用方向键或 WASD 移动角色，把箱子推到绿色目标点上",
+    "legend": "图例",
+    "wall": "墙",
+    "target": "目标点",
+    "box": "箱子",
+    "player": "玩家",
+    "size": "尺寸",
+    "reset": "重置本关",
+    "victory": "通关成功！",
+    "defeat": "步数用尽",
+    "nextLevel": "下一关",
+    "forfeitConfirm": "确定要退出并放弃当前游戏吗？"
+  },
+  "deal": {
+    "title": "交易大师",
+    "description": "Deal or No Deal，25个箱子，一个改变命运的机会。",
+    "mode": {
+      "single": "单人模式",
+      "double": "双人模式"
+    },
+    "selectOwn": "请选择你要保留的箱子",
+    "yourCase": "你的箱子",
+    "eliminate": "请排除 {count} 个箱子（第 {round} 轮）",
+    "bankerOffer": "银行家报价",
+    "deal": "卖出 (DEAL)",
+    "noDeal": "继续 (NO DEAL)",
+    "finalReveal": "最终揭晓",
+    "result": "最终结果",
+    "win": "你获得了 {amount}",
+    "player1": "玩家一",
+    "player2": "玩家二",
+    "turn": "轮到 {player}",
+    "history": "历史报价",
+    "round": "第 {round} 轮",
+    "amountBoard": "金额板",
+    "forfeitConfirm": "确定要放弃当前游戏吗？"
+  },
+  "achievements": {
+    "title": "成就",
+    "totalPoints": "总积分：{points}",
+    "locked": "未解锁",
+    "unlocked": "已解锁",
+    "newUnlock": "解锁新成就！",
+    "filterAll": "全部",
+    "filterSokoban": "推箱子",
+    "filterDeal": "交易大师"
+  },
+  "settings": {
+    "title": "设置",
+    "language": "语言",
+    "sound": "音效",
+    "resetData": "重置所有数据",
+    "resetConfirm": "确定要清除所有成就、设置和进度吗？此操作不可恢复。",
+    "redeemCode": "兑换码",
+    "redeemSubmit": "提交",
+    "redeemSuccess": "兑换成功",
+    "redeemInvalid": "无效指令"
+  },
+  "common": {
+    "confirm": "确认",
+    "cancel": "取消",
+    "close": "关闭",
+    "continue": "继续",
+    "yes": "是",
+    "no": "否"
+  },
+  "ach": {
+    "hangOnTree": {
+      "name": "吊死在一棵树上",
+      "desc": "在同一关连续重置三次"
+    },
+    "passFive": {
+      "name": "过五关",
+      "desc": "首次通过第五关"
+    },
+    "cutSix": {
+      "name": "斩六将",
+      "desc": "在一关内归位了6个箱子，且没有重置"
+    },
+    "millionaire": {
+      "name": "百万富翁",
+      "desc": "坚持到最后并获得一百万美元"
+    },
+    "millionPoor": {
+      "name": "百万负翁",
+      "desc": "坚持到最后并获得0.01美元"
+    },
+    "impatient": {
+      "name": "急不可耐",
+      "desc": "在第一次排除箱子之后就选择卖出"
+    },
+    "reverseVilla": {
+      "name": "反选别墅靠大海",
+      "desc": "连续三次排除超过10万美元的箱子"
+    },
+    "prophet": {
+      "name": "预言家",
+      "desc": "卖出箱子后，获得的报价与箱内金额不超过1%"
+    }
+  }
+}
