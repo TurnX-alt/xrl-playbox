@@ -126,7 +126,8 @@
     "redeemCode": "兑换码",
     "redeemSubmit": "提交",
     "redeemSuccess": "兑换成功",
-    "redeemInvalid": "无效指令"
+    "redeemInvalid": "无效指令",
+    "redeemCodeInvalid": "无效兑换码"
   },
   "common": {
     "confirm": "确认",

@@ -126,7 +126,8 @@
     "redeemCode": "Redeem Code",
     "redeemSubmit": "Submit",
     "redeemSuccess": "Redeemed",
-    "redeemInvalid": "Invalid command"
+    "redeemInvalid": "Invalid command",
+    "redeemCodeInvalid": "Invalid redeem code"
   },
   "common": {
     "confirm": "Confirm",

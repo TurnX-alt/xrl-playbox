@@ -70,65 +70,55 @@ function handleRedeem() {
   redeemStatus.value = "";
   redeemError.value = false;
 
-  const parts = redeemCode.value.trim().split(/\s+/);
-  if (parts.length < 4 || parts[0].toLowerCase() !== "set" || parts[1].toLowerCase() !== "achievement") {
+  if (import.meta.env.DEV) {
+    const parts = redeemCode.value.trim().split(/\s+/);
+    if (parts.length >= 4 && parts[0].toLowerCase() === "set" && parts[1].toLowerCase() === "achievement") {
+      const index = parseInt(parts[2], 10);
+      const boolValue = parseBool(parts[3]);
+
+      if (Number.isFinite(index) && index >= 1 && index <= ALL_ACHIEVEMENTS.length && boolValue !== null) {
+        const ach = ALL_ACHIEVEMENTS[index - 1];
+        if (boolValue) {
+          checkAndUnlock(ach.id, true);
+        } else {
+          achievementStore.setUnlocked(ach.id, false);
+        }
+        redeemStatus.value = t("settings.redeemSuccess");
+        redeemCode.value = "";
+        return;
+      }
+    }
+
     redeemStatus.value = t("settings.redeemInvalid");
     redeemError.value = true;
     return;
   }
 
-  const index = parseInt(parts[2], 10);
-  const boolValue = parseBool(parts[3]);
-
-  if (!Number.isFinite(index) || index < 1 || index > ALL_ACHIEVEMENTS.length || boolValue === null) {
-    redeemStatus.value = t("settings.redeemInvalid");
-    redeemError.value = true;
-    return;
-  }
-
-  const ach = ALL_ACHIEVEMENTS[index - 1];
-
-  if (boolValue) {
-    checkAndUnlock(ach.id, true);
-  } else {
-    achievementStore.setUnlocked(ach.id, false);
-  }
-
-  redeemStatus.value = t("settings.redeemSuccess");
-  redeemError.value = false;
-  redeemCode.value = "";
+  redeemStatus.value = t("settings.redeemCodeInvalid");
+  redeemError.value = true;
 }
 </script>
 
 <template>
-  <div class="settings"
-    >
+  <div class="settings">
     <h1 class="page-title">{{ t("settings.title") }}</h1>
 
-    <div class="setting-card about-card"
-      >
-      <div class="about-row"
-        >
-        <md-icon-button @click="openGitHub" :aria-label="t('settings.github')"
-          >
-          <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true"
-            ><path
-              fill="currentColor"
-              d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"
-            /></svg
-          >
+    <div class="setting-card about-card">
+      <div class="about-row">
+        <md-icon-button @click="openGitHub" :aria-label="t('settings.github')">
+          <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor"
+              d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+          </svg>
         </md-icon-button>
         <span class="copyright">{{ t("settings.copyright") }}</span>
       </div>
     </div>
 
-    <div class="setting-card"
-      >
-      <div class="setting-row"
-        >
+    <div class="setting-card">
+      <div class="setting-row">
         <label>{{ t("settings.language") }}</label>
-        <md-outlined-select :value="settingsStore.settings.locale" @change="onLocaleChange"
-          >
+        <md-outlined-select :value="settingsStore.settings.locale" @change="onLocaleChange">
           <md-select-option value="zh-CN">中文</md-select-option>
           <md-select-option value="en">English</md-select-option>
           <md-select-option value="ja">日本語</md-select-option>
@@ -136,68 +126,47 @@ function handleRedeem() {
         </md-outlined-select>
       </div>
 
-      <div class="setting-row"
-        >
+      <div class="setting-row">
         <label>{{ t("settings.theme") }}</label>
-        <md-outlined-select :value="settingsStore.settings.theme" @change="onThemeChange"
-          >
+        <md-outlined-select :value="settingsStore.settings.theme" @change="onThemeChange">
           <md-select-option value="light">{{ t("settings.themeLight") }}</md-select-option>
           <md-select-option value="dark">{{ t("settings.themeDark") }}</md-select-option>
           <md-select-option value="system">{{ t("settings.themeSystem") }}</md-select-option>
         </md-outlined-select>
       </div>
 
-      <div class="setting-row"
-        >
+      <div class="setting-row">
         <label>{{ t("settings.themeColor") }}</label>
-        <md-outlined-select :value="settingsStore.settings.themeColor" @change="onThemeColorChange"
-          >
-          <md-select-option v-for="color in themeColors" :key="color" :value="color"
-            >{{ t(`settings.color${color.charAt(0).toUpperCase() + color.slice(1)}`) }}</md-select-option
-          >
+        <md-outlined-select :value="settingsStore.settings.themeColor" @change="onThemeColorChange">
+          <md-select-option v-for="color in themeColors" :key="color" :value="color">{{
+            t(`settings.color${color.charAt(0).toUpperCase() + color.slice(1)}`) }}</md-select-option>
         </md-outlined-select>
       </div>
     </div>
 
-    <div class="setting-card"
-      >
-      <div class="setting-row"
-        >
+    <div class="setting-card">
+      <div class="setting-row">
         <label>{{ t("settings.redeemCode") }}</label>
       </div>
-      <div class="redeem-row"
-        >
-        <md-outlined-text-field
-          v-model="redeemCode"
-          class="redeem-input"
-          @keydown.enter="handleRedeem"
-        >
+      <div class="redeem-row">
+        <md-outlined-text-field v-model="redeemCode" class="redeem-input" @keydown.enter="handleRedeem">
         </md-outlined-text-field>
-        <md-outlined-button @click="handleRedeem"
-          >{{ t("settings.redeemSubmit") }}</md-outlined-button>
+        <md-outlined-button @click="handleRedeem">{{ t("settings.redeemSubmit") }}</md-outlined-button>
       </div>
-      <div v-if="redeemStatus" class="redeem-status" :class="{ error: redeemError }"
-        >{{ redeemStatus }}</div>
+      <div v-if="redeemStatus" class="redeem-status" :class="{ error: redeemError }">{{ redeemStatus }}</div>
     </div>
 
-    <div class="danger-zone"
-      >
-      <md-outlined-button @click="resetDialogOpen = true"
-        >{{ t("settings.resetData") }}</md-outlined-button>
+    <div class="danger-zone">
+      <md-outlined-button @click="resetDialogOpen = true">{{ t("settings.resetData") }}</md-outlined-button>
     </div>
 
-    <div v-if="resetDialogOpen" class="modal-backdrop" @click.self="resetDialogOpen = false"
-      >
-      <div class="modal"
-        >
+    <div v-if="resetDialogOpen" class="modal-backdrop" @click.self="resetDialogOpen = false">
+      <div class="modal">
         <div class="modal-title">{{ t("settings.resetData") }}</div>
         <div class="modal-content">{{ t("settings.resetConfirm") }}</div>
-        <div class="modal-actions"
-          >
-          <button class="modal-btn secondary" @click="resetDialogOpen = false"
-            >{{ t("common.cancel") }}</button>
-          <button class="modal-btn primary" @click="confirmReset"
-            >{{ t("common.confirm") }}</button>
+        <div class="modal-actions">
+          <button class="modal-btn secondary" @click="resetDialogOpen = false">{{ t("common.cancel") }}</button>
+          <button class="modal-btn primary" @click="confirmReset">{{ t("common.confirm") }}</button>
         </div>
       </div>
     </div>

@@ -126,7 +126,8 @@
     "redeemCode": "Canjear código",
     "redeemSubmit": "Enviar",
     "redeemSuccess": "Canjeado",
-    "redeemInvalid": "Comando inválido"
+    "redeemInvalid": "Comando inválido",
+    "redeemCodeInvalid": "Código de canje inválido"
   },
   "common": {
     "confirm": "Confirmar",

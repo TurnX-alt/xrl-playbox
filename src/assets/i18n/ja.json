@@ -126,7 +126,8 @@
     "redeemCode": "コード入力",
     "redeemSubmit": "送信",
     "redeemSuccess": "適用しました",
-    "redeemInvalid": "無効なコマンド"
+    "redeemInvalid": "無効なコマンド",
+    "redeemCodeInvalid": "無効なコード"
   },
   "common": {
     "confirm": "確認",
