@@ -102,7 +102,9 @@
     "filterSokoban": "Sokoban",
     "filterDeal": "Deal Master",
     "filterTyping": "Typing Race",
-    "filterSelftest": "Self Test"
+    "filterSelftest": "Self Test",
+    "filterWordsearch": "Word Search",
+    "filterMinimonopoly": "Mini Monopoly"
   },
   "settings": {
     "title": "Settings",
@@ -180,6 +182,30 @@
     "hatsuneDisappearance": {
       "name": "Hatsune Disappearance",
       "desc": "Type more than 20 words correctly within 10 seconds"
+    },
+    "wordsearchAllFound": {
+      "name": "Eagle Eye",
+      "desc": "Find all words in a word search game"
+    },
+    "wordsearchSpeedy": {
+      "name": "Speed Reader",
+      "desc": "Find all words in 60 seconds or less"
+    },
+    "wordsearchLongWord": {
+      "name": "Long Word Hunter",
+      "desc": "Find a word with 6 or more letters"
+    },
+    "minimonopolyTycoon": {
+      "name": "Property Tycoon",
+      "desc": "Win a Mini Monopoly game"
+    },
+    "minimonopolyLandlord": {
+      "name": "Landlord",
+      "desc": "Own 5 properties at the same time"
+    },
+    "minimonopolyMaxLevel": {
+      "name": "Skyscraper",
+      "desc": "Upgrade a property to max level"
     }
   },
   "selftest": {
@@ -409,5 +435,79 @@
         }
       }
     }
+  },
+  "wordsearch": {
+    "title": "Word Search",
+    "description": "Find all hidden words in the letter grid",
+    "found": "Found",
+    "time": "Time",
+    "newGame": "New Game",
+    "victory": "All found!",
+    "victoryTime": "Time: {time}",
+    "forfeitConfirm": "Are you sure you want to quit and forfeit the current game?"
+  },
+  "minimonopoly": {
+    "title": "Mini Monopoly",
+    "description": "Roll dice, buy plots, upgrade and become the richest player",
+    "start": "Start Game",
+    "playerCount": "Players",
+    "playerName": "Player {n} Name",
+    "ai": "AI Player",
+    "round": "Round {round} / {max}",
+    "roll": "Roll Dice",
+    "rollHint": "Tap to roll",
+    "dice": "Dice: {n}",
+    "buy": "Buy (${price})",
+    "upgrade": "Upgrade (${cost})",
+    "skip": "Skip",
+    "endTurn": "End Turn",
+    "restart": "Play Again",
+    "winner": "Winner",
+    "tileStart": "Start",
+    "tileProperty": "Plot",
+    "tileChance": "Chance",
+    "tileTax": "Tax",
+    "tileJail": "Jail",
+    "tilePark": "Park",
+    "propCafe": "Cafe",
+    "propBookstore": "Bookstore",
+    "propMarket": "Market",
+    "propBakery": "Bakery",
+    "propCinema": "Cinema",
+    "propPharmacy": "Pharmacy",
+    "propHotel": "Hotel",
+    "propBank": "Bank",
+    "propMall": "Mall",
+    "propStation": "Station",
+    "propArcade": "Arcade",
+    "propPark": "Park Plot",
+    "propGym": "Gym",
+    "propTheater": "Theater",
+    "propStudio": "Studio",
+    "propGallery": "Gallery",
+    "areaRed": "Red Zone",
+    "areaBlue": "Blue Zone",
+    "areaGreen": "Green Zone",
+    "areaYellow": "Yellow Zone",
+    "chanceWin": "{name} drew Chance: win ${amount}",
+    "chanceLose": "{name} drew Chance: lose ${amount}",
+    "chanceMove": "{name} drew Chance: move forward {steps}",
+    "chanceBack": "{name} drew Chance: move back {steps}",
+    "chanceJail": "{name} drew Chance: go to jail",
+    "chanceBonus": "{name} drew Chance: bonus ${amount}",
+    "logStart": "Game started!",
+    "logPassStart": "{name} passed start and received $200",
+    "logLandStart": "{name} landed on start",
+    "logLandPark": "{name} rested in the park",
+    "logTax": "{name} paid $150 tax",
+    "logJail": "{name} went to jail",
+    "logBail": "{name} paid bail and left jail",
+    "logJailTurn": "{name} waited in jail",
+    "logRent": "{name} paid ${amount} rent to {owner}",
+    "logBuy": "{name} bought {property}",
+    "logUpgrade": "{name} upgraded {property} to level {level}",
+    "logBankrupt": "{name} went bankrupt",
+    "logWinner": "{name} wins!",
+    "forfeitConfirm": "Are you sure you want to quit and forfeit the current game?"
   }
 }

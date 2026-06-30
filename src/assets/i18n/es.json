@@ -102,7 +102,9 @@
     "filterSokoban": "Sokoban",
     "filterDeal": "Maestro del Trato",
     "filterTyping": "Carrera de mecanografía",
-    "filterSelftest": "Autoevaluación"
+    "filterSelftest": "Autoevaluación",
+    "filterWordsearch": "Sopa de letras",
+    "filterMinimonopoly": "Mini Monopoly"
   },
   "settings": {
     "title": "Ajustes",
@@ -180,6 +182,30 @@
     "hatsuneDisappearance": {
       "name": "La desaparición de Hatsune",
       "desc": "Escribe más de 20 palabras correctas en 10 segundos"
+    },
+    "wordsearchAllFound": {
+      "name": "Ojo de águila",
+      "desc": "Encuentra todas las palabras en una sopa de letras"
+    },
+    "wordsearchSpeedy": {
+      "name": "Lector rápido",
+      "desc": "Encuentra todas las palabras en 60 segundos o menos"
+    },
+    "wordsearchLongWord": {
+      "name": "Cazador de palabras largas",
+      "desc": "Encuentra una palabra de 6 o más letras"
+    },
+    "minimonopolyTycoon": {
+      "name": "Magnate inmobiliario",
+      "desc": "Gana una partida de Mini Monopoly"
+    },
+    "minimonopolyLandlord": {
+      "name": "Propietario",
+      "desc": "Posee 5 propiedades al mismo tiempo"
+    },
+    "minimonopolyMaxLevel": {
+      "name": "Rascacielos",
+      "desc": "Mejora una propiedad al nivel máximo"
     }
   },
   "selftest": {
@@ -409,5 +435,79 @@
         }
       }
     }
+  },
+  "wordsearch": {
+    "title": "Sopa de letras",
+    "description": "Encuentra todas las palabras ocultas en la cuadrícula",
+    "found": "Encontradas",
+    "time": "Tiempo",
+    "newGame": "Nueva partida",
+    "victory": "¡Todas encontradas!",
+    "victoryTime": "Tiempo: {time}",
+    "forfeitConfirm": "¿Seguro que quieres salir y abandonar la partida actual?"
+  },
+  "minimonopoly": {
+    "title": "Mini Monopoly",
+    "description": "Lanza los dados, compra terrenos, mejora y sé el jugador más rico",
+    "start": "Empezar partida",
+    "playerCount": "Jugadores",
+    "playerName": "Nombre del jugador {n}",
+    "ai": "Jugador IA",
+    "round": "Ronda {round} / {max}",
+    "roll": "Lanzar dados",
+    "rollHint": "Toca para lanzar",
+    "dice": "Dado: {n}",
+    "buy": "Comprar (${price})",
+    "upgrade": "Mejorar (${cost})",
+    "skip": "Saltar",
+    "endTurn": "Terminar turno",
+    "restart": "Jugar otra vez",
+    "winner": "Ganador",
+    "tileStart": "Salida",
+    "tileProperty": "Terreno",
+    "tileChance": "Suerte",
+    "tileTax": "Impuesto",
+    "tileJail": "Cárcel",
+    "tilePark": "Parque",
+    "propCafe": "Cafetería",
+    "propBookstore": "Librería",
+    "propMarket": "Mercado",
+    "propBakery": "Panadería",
+    "propCinema": "Cine",
+    "propPharmacy": "Farmacia",
+    "propHotel": "Hotel",
+    "propBank": "Banco",
+    "propMall": "Centro comercial",
+    "propStation": "Estación",
+    "propArcade": "Arcade",
+    "propPark": "Terreno del parque",
+    "propGym": "Gimnasio",
+    "propTheater": "Teatro",
+    "propStudio": "Estudio",
+    "propGallery": "Galería",
+    "areaRed": "Zona roja",
+    "areaBlue": "Zona azul",
+    "areaGreen": "Zona verde",
+    "areaYellow": "Zona amarilla",
+    "chanceWin": "{name} sacó Suerte: gana ${amount}",
+    "chanceLose": "{name} sacó Suerte: pierde ${amount}",
+    "chanceMove": "{name} sacó Suerte: avanza {steps} casillas",
+    "chanceBack": "{name} sacó Suerte: retrocede {steps} casillas",
+    "chanceJail": "{name} sacó Suerte: va a la cárcel",
+    "chanceBonus": "{name} sacó Suerte: bono de ${amount}",
+    "logStart": "¡Partida iniciada!",
+    "logPassStart": "{name} pasó por la salida y recibió $200",
+    "logLandStart": "{name} cayó en la salida",
+    "logLandPark": "{name} descansó en el parque",
+    "logTax": "{name} pagó $150 de impuestos",
+    "logJail": "{name} fue a la cárcel",
+    "logBail": "{name} pagó fianza y salió de la cárcel",
+    "logJailTurn": "{name} esperó en la cárcel",
+    "logRent": "{name} pagó ${amount} de alquiler a {owner}",
+    "logBuy": "{name} compró {property}",
+    "logUpgrade": "{name} mejoró {property} a nivel {level}",
+    "logBankrupt": "{name} se ha arruinado",
+    "logWinner": "¡{name} gana!",
+    "forfeitConfirm": "¿Seguro que quieres salir y abandonar la partida actual?"
   }
 }

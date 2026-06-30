@@ -11,7 +11,9 @@ const hideNav = computed(() =>
   route.path === "/sokoban" ||
   route.path === "/deal-or-no-deal" ||
   route.path === "/typing" ||
-  route.path === "/selftest"
+  route.path === "/selftest" ||
+  route.path === "/wordsearch" ||
+  route.path === "/minimonopoly"
 );
 
 const navItems = computed(() => [
@@ -28,7 +30,7 @@ function isActive(path: string) {
 <template>
   <div class="shell"
     >
-    <main class="content"
+    <main class="content" :class="{ 'is-game': hideNav }"
       >
       <slot />
     </main>
@@ -64,6 +66,10 @@ function isActive(path: string) {
   display: flex;
   flex-direction: column;
   min-height: 0;
+}
+
+.content.is-game {
+  padding-top: 0;
 }
 
 .bottom-nav {

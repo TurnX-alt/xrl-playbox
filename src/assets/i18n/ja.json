@@ -102,7 +102,9 @@
     "filterSokoban": "倉庫番",
     "filterDeal": "ディールマスター",
     "filterTyping": "タイピングレース",
-    "filterSelftest": "自己診断"
+    "filterSelftest": "自己診断",
+    "filterWordsearch": "ワードサーチ",
+    "filterMinimonopoly": "ミニ・モノポリー"
   },
   "settings": {
     "title": "設定",
@@ -180,6 +182,30 @@
     "hatsuneDisappearance": {
       "name": "初音ミクの消失",
       "desc": "10秒以内に20単語以上正確に入力する"
+    },
+    "wordsearchAllFound": {
+      "name": "鋭い目",
+      "desc": "ワードサーチですべての単語を見つける"
+    },
+    "wordsearchSpeedy": {
+      "name": "スピードリーダー",
+      "desc": "60秒以内ですべての単語を見つける"
+    },
+    "wordsearchLongWord": {
+      "name": "長い単語ハンター",
+      "desc": "6文字以上の単語を見つける"
+    },
+    "minimonopolyTycoon": {
+      "name": "不動産王",
+      "desc": "ミニ・モノポリーを勝利する"
+    },
+    "minimonopolyLandlord": {
+      "name": "家主",
+      "desc": "同時に5つの物件を所有する"
+    },
+    "minimonopolyMaxLevel": {
+      "name": "超高層ビル",
+      "desc": "物件を最大レベルにアップグレードする"
     }
   },
   "selftest": {
@@ -409,5 +435,79 @@
         }
       }
     }
+  },
+  "wordsearch": {
+    "title": "ワードサーチ",
+    "description": "文字のマスから隠れた単語をすべて見つけよう",
+    "found": "発見",
+    "time": "時間",
+    "newGame": "新規ゲーム",
+    "victory": "全発見！",
+    "victoryTime": "時間：{time}",
+    "forfeitConfirm": "本当に退出して現在のゲームを破棄しますか？"
+  },
+  "minimonopoly": {
+    "title": "ミニ・モノポリー",
+    "description": "サイコロを振って土地を買い、最も裕福なプレイヤーになろう",
+    "start": "ゲーム開始",
+    "playerCount": "プレイヤー数",
+    "playerName": "プレイヤー{n}の名前",
+    "ai": "AIプレイヤー",
+    "round": "ラウンド {round} / {max}",
+    "roll": "サイコロを振る",
+    "rollHint": "タップしてサイコロを振る",
+    "dice": "出目：{n}",
+    "buy": "購入（${price}）",
+    "upgrade": "アップグレード（${cost}）",
+    "skip": "スキップ",
+    "endTurn": "ターン終了",
+    "restart": "もう一度",
+    "winner": "勝者",
+    "tileStart": "スタート",
+    "tileProperty": "物件",
+    "tileChance": "チャンス",
+    "tileTax": "税金",
+    "tileJail": "刑務所",
+    "tilePark": "公園",
+    "propCafe": "カフェ",
+    "propBookstore": "書店",
+    "propMarket": "市場",
+    "propBakery": "パン屋",
+    "propCinema": "映画館",
+    "propPharmacy": "薬局",
+    "propHotel": "ホテル",
+    "propBank": "銀行",
+    "propMall": "モール",
+    "propStation": "駅",
+    "propArcade": "ゲームセンター",
+    "propPark": "公園物件",
+    "propGym": "ジム",
+    "propTheater": "劇場",
+    "propStudio": "スタジオ",
+    "propGallery": "ギャラリー",
+    "areaRed": "赤ゾーン",
+    "areaBlue": "青ゾーン",
+    "areaGreen": "緑ゾーン",
+    "areaYellow": "黄ゾーン",
+    "chanceWin": "{name} はチャンスカードを引いた：${amount} 獲得",
+    "chanceLose": "{name} はチャンスカードを引いた：${amount} 失う",
+    "chanceMove": "{name} はチャンスカードを引いた：{steps} マス進む",
+    "chanceBack": "{name} はチャンスカードを引いた：{steps} マス戻る",
+    "chanceJail": "{name} はチャンスカードを引いた：刑務所へ",
+    "chanceBonus": "{name} はチャンスカードを引いた：ボーナス ${amount}",
+    "logStart": "ゲーム開始！",
+    "logPassStart": "{name} はスタートを通過し $200 獲得",
+    "logLandStart": "{name} はスタートに止まった",
+    "logLandPark": "{name} は公園で休憩",
+    "logTax": "{name} は税金 $150 を支払った",
+    "logJail": "{name} は刑務所に入った",
+    "logBail": "{name} は保釈金を支払って出所",
+    "logJailTurn": "{name} は刑務所で待機",
+    "logRent": "{name} は {owner} に家賃 ${amount} を支払った",
+    "logBuy": "{name} は {property} を購入",
+    "logUpgrade": "{name} は {property} をレベル {level} にアップグレード",
+    "logBankrupt": "{name} は破産した",
+    "logWinner": "{name} の勝利！",
+    "forfeitConfirm": "本当に退出して現在のゲームを破棄しますか？"
   }
 }

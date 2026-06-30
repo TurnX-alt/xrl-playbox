@@ -130,17 +130,16 @@ const testCards: { type: TestType; icon: string }[] = [
 <template>
   <div class="selftest"
     >
-    <div class="header"
+    <div class="game-header"
       >
-      <md-outlined-button @click="backHome"
+      <md-outlined-button class="back-btn" @click="backHome"
         >{{ t("nav.back") }}</md-outlined-button
       >
-      <div class="title-block"
+      <h1 class="game-title">{{ t("selftest.title") }}</h1>
+      <div class="game-state"
         >
-        <h1 class="title">{{ t("selftest.title") }}</h1>
-        <div class="subtitle">{{ t("selftest.subtitle") }}</div>
+        <span v-if="selectedTest">{{ progress }}%</span>
       </div>
-      <div class="spacer"></div>
     </div>
 
     <!-- Test selection -->
@@ -341,56 +340,28 @@ const testCards: { type: TestType; icon: string }[] = [
 .selftest {
   flex: 1;
   min-height: 0;
+  height: 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding-bottom: 24px;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.title-block {
-  flex: 1;
-  min-width: 0;
-}
-
-.title {
-  margin: 0;
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--md-sys-color-on-surface);
-}
-
-.subtitle {
-  font-size: 0.875rem;
-  color: var(--md-sys-color-on-surface-variant);
-}
-
-.spacer {
-  width: 80px;
 }
 
 .select-card,
 .quiz-card,
 .result-card {
   flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   background: var(--md-sys-color-surface-variant);
   border-radius: 16px;
-  padding: 24px;
+  padding: 16px;
   border: 1px solid var(--md-sys-color-outline-variant);
 }
 
 .select-title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--md-sys-color-on-surface);
   text-align: center;
@@ -399,7 +370,7 @@ const testCards: { type: TestType; icon: string }[] = [
 .test-grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 16px;
+  gap: 12px;
 }
 
 @media (min-width: 600px) {
@@ -412,8 +383,8 @@ const testCards: { type: TestType; icon: string }[] = [
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 24px 16px;
+  gap: 6px;
+  padding: 16px 12px;
   border: 1px solid var(--md-sys-color-outline-variant);
   border-radius: 16px;
   background: var(--md-sys-color-surface);
@@ -429,17 +400,17 @@ const testCards: { type: TestType; icon: string }[] = [
 }
 
 .test-icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--md-sys-color-primary);
 }
 
 .test-name {
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 600;
 }
 
 .test-desc {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: var(--md-sys-color-on-surface-variant);
   text-align: center;
 }
@@ -477,36 +448,37 @@ const testCards: { type: TestType; icon: string }[] = [
 
 .question {
   flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 16px;
   justify-content: center;
 }
 
 .question-text {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 500;
   color: var(--md-sys-color-on-surface);
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .options {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   max-width: 560px;
   width: 100%;
   margin: 0 auto;
 }
 
 .option-btn {
-  padding: 14px 16px;
+  padding: 10px 12px;
   border-radius: 12px;
   border: 1px solid var(--md-sys-color-outline-variant);
   background: var(--md-sys-color-surface);
   color: var(--md-sys-color-on-surface);
-  font-size: 1rem;
+  font-size: 0.875rem;
   cursor: pointer;
   text-align: left;
   transition: background 0.15s ease, border-color 0.15s ease;
@@ -527,13 +499,13 @@ const testCards: { type: TestType; icon: string }[] = [
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .nav-actions {
   display: flex;
-  gap: 12px;
+  gap: 8px;
 }
 
 .result-label {
@@ -546,30 +518,31 @@ const testCards: { type: TestType; icon: string }[] = [
 
 .result-body {
   flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
 .result-code {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 800;
   color: var(--md-sys-color-primary);
   letter-spacing: 0.05em;
 }
 
 .result-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--md-sys-color-on-surface);
 }
 
 .result-desc {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 0.875rem;
+  line-height: 1.5;
   color: var(--md-sys-color-on-surface-variant);
   max-width: 640px;
 }
@@ -579,14 +552,14 @@ const testCards: { type: TestType; icon: string }[] = [
   max-width: 480px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 16px;
+  gap: 12px;
+  margin-top: 8px;
 }
 
 .axis {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 8px 12px;
+  gap: 4px 12px;
   align-items: center;
 }
 
@@ -594,26 +567,26 @@ const testCards: { type: TestType; icon: string }[] = [
   grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: var(--md-sys-color-on-surface-variant);
 }
 
 .axis-bar {
-  height: 10px;
+  height: 8px;
   background: var(--md-sys-color-surface);
-  border-radius: 5px;
+  border-radius: 4px;
   overflow: hidden;
 }
 
 .axis-fill {
   height: 100%;
   background: var(--md-sys-color-primary);
-  border-radius: 5px;
+  border-radius: 4px;
   transition: width 0.4s ease;
 }
 
 .axis-value {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--md-sys-color-on-surface);
   min-width: 44px;
@@ -623,7 +596,7 @@ const testCards: { type: TestType; icon: string }[] = [
 .result-actions {
   display: flex;
   justify-content: center;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 </style>

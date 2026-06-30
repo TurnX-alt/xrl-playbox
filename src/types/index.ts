@@ -1,4 +1,4 @@
-export type GameId = "sokoban" | "deal" | "typing" | "selftest";
+export type GameId = "sokoban" | "deal" | "typing" | "selftest" | "wordsearch" | "minimonopoly";
 
 export interface Achievement {
   id: string;

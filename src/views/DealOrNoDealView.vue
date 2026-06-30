@@ -140,6 +140,22 @@ const amountBoard = computed(() => {
 <template>
   <div class="deal"
     >
+    <div class="game-header"
+      >
+      <md-outlined-button class="back-btn" @click="backHome"
+        >{{ t("nav.back") }}
+      </md-outlined-button>
+      <h1 class="game-title"
+        >{{ t("deal.title") }}
+      </h1>
+      <div class="game-state"
+        >
+        <span v-if="state"
+          >{{ t("deal.round", { round: state.round }) }}
+        </span>
+      </div>
+    </div>
+
     <div class="game-layout"
       >
       <aside class="amount-side"
@@ -206,13 +222,6 @@ const amountBoard = computed(() => {
         >
         <div class="panel-card"
           >
-          <div class="panel-header"
-            >
-            <span class="title">{{ t("deal.title") }}</span>
-            <md-outlined-button @click="backHome"
-              >{{ t("nav.back") }}</md-outlined-button>
-          </div>
-
           <div v-if="state" class="status"
             >
             <div v-if="phase === 'select-own'" class="phase-text"
@@ -456,18 +465,6 @@ const amountBoard = computed(() => {
   gap: 16px;
 }
 
-.panel-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.title {
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-
 .status {
   font-size: 1rem;
 }
@@ -583,7 +580,6 @@ const amountBoard = computed(() => {
   .game-layout {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
-    overflow-y: auto;
   }
 
   .game-board {
@@ -593,7 +589,7 @@ const amountBoard = computed(() => {
   .amount-side {
     flex-direction: row;
     width: 100%;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: hidden;
   }
 
@@ -605,6 +601,10 @@ const amountBoard = computed(() => {
   .amount-item {
     flex: 1 1 auto;
     min-width: 72px;
+  }
+
+  .game-panel {
+    max-height: 35vh;
   }
 }
 </style>

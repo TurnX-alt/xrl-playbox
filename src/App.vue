@@ -73,6 +73,43 @@ md-icon {
   -webkit-font-smoothing: antialiased;
 }
 
+.back-btn {
+  --md-outlined-button-container-height: 28px;
+  --md-outlined-button-leading-space: 8px;
+  --md-outlined-button-trailing-space: 8px;
+  --md-outlined-button-label-text-size: 0.75rem;
+}
+
+.game-header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  flex-shrink: 0;
+}
+
+.game-header .back-btn {
+  justify-self: start;
+}
+
+.game-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.game-state {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;

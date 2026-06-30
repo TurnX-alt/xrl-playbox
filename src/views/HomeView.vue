@@ -75,6 +75,8 @@ async function play(id: GameId) {
   if (id === "sokoban") router.push("/sokoban");
   else if (id === "deal") router.push("/deal-or-no-deal");
   else if (id === "typing") router.push("/typing");
+  else if (id === "wordsearch") router.push("/wordsearch");
+  else if (id === "minimonopoly") router.push("/minimonopoly");
   else router.push("/selftest");
 }
 

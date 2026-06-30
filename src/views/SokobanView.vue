@@ -210,6 +210,16 @@ function nextLevel() {
 <template>
   <div class="sokoban"
     >
+    <div class="game-header"
+      >
+      <md-outlined-button class="back-btn" @click="backHome">{{ t("nav.back") }}</md-outlined-button>
+      <h1 class="game-title">{{ t("sokoban.title") }}</h1>
+      <div class="game-state"
+        >
+        <span>{{ t("sokoban.level", { level: store.currentLevel }) }}</span>
+      </div>
+    </div>
+
     <div class="game-layout"
       >
       <div class="game-board" ref="boardRef"
@@ -236,12 +246,6 @@ function nextLevel() {
         >
         <div class="panel-card"
           >
-          <div class="level-row"
-            >
-            <span class="level">{{ t("sokoban.level", { level: store.currentLevel }) }}</span>
-            <md-outlined-button @click="backHome">{{ t("nav.back") }}</md-outlined-button>
-          </div>
-
           <div class="stats"
             >
             <div class="stat">{{ t("sokoban.steps", { used: store.stepsUsed, limit: store.stepLimit }) }}</div>
@@ -468,18 +472,6 @@ function nextLevel() {
   display: flex;
   flex-direction: column;
   gap: 16px;
-}
-
-.level-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.level {
-  font-size: 1.25rem;
-  font-weight: 600;
 }
 
 .stats {

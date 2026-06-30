@@ -130,13 +130,6 @@ function forfeit() {
   selectedDifficulty.value = null;
 }
 
-function formatTime(ms: number): string {
-  const totalSeconds = Math.floor(ms / 1000);
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-  return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-}
-
 onMounted(() => {
   window.addEventListener("keydown", handleKeyDown);
 });
@@ -150,35 +143,15 @@ onUnmounted(() => {
 <template>
   <div class="typing"
     >
-    <div class="header"
+    <div class="game-header"
       >
-      <md-outlined-button @click="backHome"
+      <md-outlined-button class="back-btn" @click="backHome"
         >{{ t("nav.back") }}</md-outlined-button
       >
-      <div class="title-block"
+      <h1 class="game-title">{{ t("typing.title") }}</h1>
+      <div class="game-state"
         >
-        <h1 class="title">{{ t("typing.title") }}</h1>
-        <div class="subtitle">{{ t("typing.subtitle") }}</div>
-      </div>
-      <div class="stats"
-        >
-        <div class="stat"
-          >
-          <span class="stat-label">{{ t("typing.wpm") }}</span>
-          <span class="stat-value">{{ stats?.wpm ?? 0 }}</span>
-        </div>
-        <div class="stat"
-          >
-          <span class="stat-label">{{ t("typing.health") }}</span>
-          <span class="stat-value" :class="{ low: (stats?.health ?? 100) < 30 }"
-            >{{ stats?.health ?? 100 }}</span
-          >
-        </div>
-        <div class="stat"
-          >
-          <span class="stat-label">{{ t("typing.time") }}</span>
-          <span class="stat-value">{{ formatTime(stats?.elapsedMs ?? 0) }}</span>
-        </div>
+        <span v-if="stats">{{ stats.wpm }} WPM</span>
       </div>
     </div>
 
@@ -298,64 +271,10 @@ onUnmounted(() => {
 .typing {
   flex: 1;
   min-height: 0;
+  height: 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding-bottom: 24px;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.title-block {
-  flex: 1;
-  min-width: 0;
-}
-
-.title {
-  margin: 0;
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: var(--md-sys-color-on-surface);
-}
-
-.subtitle {
-  font-size: 0.875rem;
-  color: var(--md-sys-color-on-surface-variant);
-}
-
-.stats {
-  display: flex;
-  gap: 16px;
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 56px;
-}
-
-.stat-label {
-  font-size: 0.75rem;
-  color: var(--md-sys-color-on-surface-variant);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.stat-value {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--md-sys-color-on-surface);
-}
-
-.stat-value.low {
-  color: var(--md-sys-color-error);
 }
 
 .health-bar {
@@ -377,10 +296,10 @@ onUnmounted(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: 16px;
   background: var(--md-sys-color-surface-variant);
   border-radius: 16px;
-  padding: 24px;
+  padding: 16px;
   border: 1px solid var(--md-sys-color-outline-variant);
 }
 
@@ -443,14 +362,14 @@ onUnmounted(() => {
   justify-content: center;
   background: var(--md-sys-color-surface-variant);
   border-radius: 16px;
-  padding: 24px;
+  padding: 16px;
   border: 1px solid var(--md-sys-color-outline-variant);
 }
 
 .passage-title {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: var(--md-sys-color-on-surface-variant);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   font-style: italic;
   text-align: center;
 }
@@ -529,7 +448,7 @@ onUnmounted(() => {
 
 .panel {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   justify-content: center;
 }
 

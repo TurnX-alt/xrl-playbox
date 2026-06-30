@@ -17,6 +17,8 @@ const FILTER_LABEL_KEYS: Record<GameId | "all", string> = {
   deal: "achievements.filterDeal",
   typing: "achievements.filterTyping",
   selftest: "achievements.filterSelftest",
+  wordsearch: "achievements.filterWordsearch",
+  minimonopoly: "achievements.filterMinimonopoly",
 };
 
 const filters = computed(() => [

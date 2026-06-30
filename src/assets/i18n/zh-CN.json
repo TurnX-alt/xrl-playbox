@@ -14,7 +14,7 @@
     "greeting": "选择一款游戏开始",
     "play": "开始游戏",
     "sortByName": "按名称排序",
-    "sortByLaunch": "按最近启动",
+    "sortByLaunch": "按最近启动时间排序",
     "lastLaunchNever": "未玩过",
     "justNow": "刚刚",
     "minutesAgo": "{n}分钟前",
@@ -102,7 +102,9 @@
     "filterSokoban": "推箱子",
     "filterDeal": "交易大师",
     "filterTyping": "打字竞速",
-    "filterSelftest": "自测"
+    "filterSelftest": "自测",
+    "filterWordsearch": "猜字谜",
+    "filterMinimonopoly": "小富翁"
   },
   "settings": {
     "title": "设置",
@@ -180,6 +182,30 @@
     "hatsuneDisappearance": {
       "name": "初音未来的消失",
       "desc": "在10秒内输入超过20个单词且全部正确"
+    },
+    "wordsearchAllFound": {
+      "name": "火眼金睛",
+      "desc": "在猜字谜中找到所有单词"
+    },
+    "wordsearchSpeedy": {
+      "name": "眼疾手快",
+      "desc": "在60秒内找到所有单词"
+    },
+    "wordsearchLongWord": {
+      "name": "长词猎人",
+      "desc": "找到一个长度不少于6个字母的单词"
+    },
+    "minimonopolyTycoon": {
+      "name": "地产大亨",
+      "desc": "赢得一局小富翁"
+    },
+    "minimonopolyLandlord": {
+      "name": "收租专家",
+      "desc": "同时拥有5块地产"
+    },
+    "minimonopolyMaxLevel": {
+      "name": "摩天大楼",
+      "desc": "将一块地产升级到最高级"
     }
   },
   "selftest": {
@@ -409,5 +435,79 @@
         }
       }
     }
+  },
+  "wordsearch": {
+    "title": "猜字谜",
+    "description": "在字母矩阵中找出所有隐藏的单词",
+    "found": "已找到",
+    "time": "用时",
+    "newGame": "新游戏",
+    "victory": "全部找到！",
+    "victoryTime": "用时：{time}",
+    "forfeitConfirm": "确定要退出并放弃当前游戏吗？"
+  },
+  "minimonopoly": {
+    "title": "小富翁",
+    "description": "掷骰子、买地、升级，成为最富有的玩家",
+    "start": "开始游戏",
+    "playerCount": "玩家数量",
+    "playerName": "玩家 {n} 名称",
+    "ai": "电脑玩家",
+    "round": "第 {round} / {max} 轮",
+    "roll": "掷骰子",
+    "rollHint": "点击掷骰子",
+    "dice": "点数：{n}",
+    "buy": "购买（${price}）",
+    "upgrade": "升级（${cost}）",
+    "skip": "跳过",
+    "endTurn": "结束回合",
+    "restart": "再来一局",
+    "winner": "获胜者",
+    "tileStart": "起点",
+    "tileProperty": "地块",
+    "tileChance": "机会",
+    "tileTax": "税收",
+    "tileJail": "监狱",
+    "tilePark": "公园",
+    "propCafe": "咖啡馆",
+    "propBookstore": "书店",
+    "propMarket": "集市",
+    "propBakery": "面包店",
+    "propCinema": "电影院",
+    "propPharmacy": "药店",
+    "propHotel": "酒店",
+    "propBank": "银行",
+    "propMall": "商场",
+    "propStation": "车站",
+    "propArcade": "游戏厅",
+    "propPark": "公园地产",
+    "propGym": "健身房",
+    "propTheater": "剧院",
+    "propStudio": "工作室",
+    "propGallery": "画廊",
+    "areaRed": "红区",
+    "areaBlue": "蓝区",
+    "areaGreen": "绿区",
+    "areaYellow": "黄区",
+    "chanceWin": "{name} 抽到机会卡：获得 ${amount}",
+    "chanceLose": "{name} 抽到机会卡：失去 ${amount}",
+    "chanceMove": "{name} 抽到机会卡：前进 {steps} 格",
+    "chanceBack": "{name} 抽到机会卡：后退 {steps} 格",
+    "chanceJail": "{name} 抽到机会卡：进入监狱",
+    "chanceBonus": "{name} 抽到机会卡：奖金 ${amount}",
+    "logStart": "游戏开始！",
+    "logPassStart": "{name} 经过起点，获得 $200",
+    "logLandStart": "{name} 停留在起点",
+    "logLandPark": "{name} 在公园休息",
+    "logTax": "{name} 缴纳税收 $150",
+    "logJail": "{name} 进入监狱",
+    "logBail": "{name} 支付保释金出狱",
+    "logJailTurn": "{name} 在监狱中等待",
+    "logRent": "{name} 支付租金 ${amount} 给 {owner}",
+    "logBuy": "{name} 购买了 {property}",
+    "logUpgrade": "{name} 将 {property} 升级到 {level} 级",
+    "logBankrupt": "{name} 破产了",
+    "logWinner": "{name} 获胜！",
+    "forfeitConfirm": "确定要退出并放弃当前游戏吗？"
   }
 }
